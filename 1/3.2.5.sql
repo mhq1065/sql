@@ -1,11 +1,8 @@
-SELECT `S#`
-FROM sc
-WHERE Grade is not Null
-    AND `C#` =(
-        SELECT `C#`
-        FROM course
-        WHERE Cname = 'CS-01'
-        LIMIT 1
+SELECT *
+FROM sc AS a
+WHERE `C#` = 'EE-01'
+    AND Grade = (
+        SELECT MAX(Grade)
+        from sc AS b
+        WHERE a.`C#` = b.`C#`
     )
-ORDER BY Grade DESC
-limit 1
