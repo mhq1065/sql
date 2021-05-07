@@ -1,0 +1,5 @@
+SELECT "C#",
+	"CNAME",
+	"CREDIT"
+FROM "JC802"
+WHERE "C#" LIKE 'EE-%'

@@ -1,0 +1,15 @@
+SELECT "S#",
+	"SNAME",
+	AVG ("GRADE")
+FROM "JS802"
+	JOIN "JSC802" USING ("S#")
+GROUP BY "S#"
+HAVING AVG ("GRADE") > (
+		SELECT AVG ("GRADE")
+		FROM "JSC802"
+		WHERE "S#" = (
+				SELECT "S#"
+				FROM "JS802"
+				WHERE "SNAME" = '王涛'
+			)
+	)
