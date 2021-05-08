@@ -1,0 +1,11 @@
+SELECT
+	"C#",
+	"CNAME",
+	AVG ( "GRADE" ) 
+FROM
+	"JC802"
+	JOIN "JSC802" USING ( "C#" ) 
+WHERE
+	"TEACHER" = '张明' 
+GROUP BY
+	"C#"
