@@ -88,7 +88,7 @@ def generateStu():
     with open("stu.csv", "w+") as f:
         f.write("S#,SNAME,SEX,BDATE,HEIGHT,DORM\n")
         # 写入1k数据
-        for i in range(1000):
+        for i in range(5000):
             f.write(','.join(getStuItem())+'\n')
 
 
@@ -97,7 +97,7 @@ def generateCourse():
     with open("course.csv", "w+") as f:
         f.write("C#,CNAME,PERIOD,CREDIT,TEACHER\n")
         # 写入150数据
-        for i in range(150):
+        for i in range(1500):
             f.write(','.join(getCourseItem())+'\n')
 
 
@@ -105,7 +105,7 @@ def generateGrades(stu, course):
     with open("grades.csv", "w+") as f:
         f.write("S#,C#,GRADE\n")
         # 写入5k数据
-        for i in range(5000):
+        for i in range(20000):
             t = [str(random.choice(stu)), random.choice(
                 course),str(random.randint(0, 1000)/10)]
             f.write(','.join(t)+'\n')
